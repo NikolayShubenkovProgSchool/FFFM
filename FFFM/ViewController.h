@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface ViewController : UIViewController
 
+@property (strong,nonatomic) NSMutableArray *IDs;
+@property (weak, nonatomic) IBOutlet MKMapView *Map;
+
+- (IBAction)ShowLocations:(id)sender;
 
 @end
 
