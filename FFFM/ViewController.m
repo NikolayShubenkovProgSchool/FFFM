@@ -10,6 +10,7 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "LocationManager.h"
 #import "Parse.h"
+#import "LocationOnMap.h"
 
 @interface ViewController ()
 
@@ -43,13 +44,36 @@
     }];
 }
 
--(void)p_parseIds:(NSArray *)array{
+-(void)p_parseIds:(NSDictionary *)dictionary{
     dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     dispatch_async(backgroundQueue, ^{
-        NSArray *parsedIds=[[Parse new] idsFromInfoes:array];
+        NSArray *parsedIds=[[Parse new] idsFromInfoes:dictionary];
         dispatch_queue_t mainQueue = dispatch_get_main_queue();
         dispatch_async(mainQueue, ^{
             IDs=parsedIds;
+            for (int i=0; i<[IDs count]/10; i++) {
+                NSLog(@"%@",IDs[i]);
+                [[LocationManager new] getGeoFromPhotoWithId:IDs[i] andComplition:^(id data, BOOL Success){
+                    if (Success) {
+                        [self p_parseGeo:data];
+                    }else{
+                        [MBProgressHUD hideAllHUDsForView:self.view
+                                                 animated:YES];
+                        NSLog(@"recieved error when tried to get Geo:\n%@",data);
+                    }
+                }];
+            }
+        });
+    });
+}
+
+-(void)p_parseGeo:(NSDictionary *)dictionary{
+    dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    dispatch_async(backgroundQueue, ^{
+        //call method from parse.h
+        dispatch_queue_t mainQueue = dispatch_get_main_queue();
+        dispatch_async(mainQueue, ^{
+            //call method to drop pins to map
         });
     });
 }

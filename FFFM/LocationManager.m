@@ -39,4 +39,23 @@
       }];
 }
 
+-(void)getGeoFromPhotoWithId:(NSString *)photoID andComplition:(GeoComplition)complitionBlock{
+    GeoComplition copiedComplitionBlock=[complitionBlock copy];
+    NSString *ID=photoID;
+    NSDictionary *parameters = @{@"method" :@"flickr.photos.geo.getLocation",
+                                @"api_key":@"8eb901e0e7bdd1a637abac52c87d1a87",
+                                @"photo_id":ID
+                                };
+    [self GET:@""
+    parameters:parameters
+        success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            copiedComplitionBlock(responseObject, YES);
+          }
+        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            copiedComplitionBlock(error, NO);
+        }];
+        
+    
+}
+
 @end

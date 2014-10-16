@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0AE76761BBEEA7E7EDEC825C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A77D9E77CA258E17D8F385 /* libPods.a */; };
+		6F36BEC719EFC26300C30330 /* LocationOnMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F36BEC619EFC26300C30330 /* LocationOnMap.m */; };
 		6F8DAC5E19E9B92100EF9685 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8DAC5D19E9B92100EF9685 /* main.m */; };
 		6F8DAC6119E9B92100EF9685 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8DAC6019E9B92100EF9685 /* AppDelegate.m */; };
 		6F8DAC6419E9B92100EF9685 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8DAC6319E9B92100EF9685 /* ViewController.m */; };
 		6F8DAC6719E9B92100EF9685 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F8DAC6519E9B92100EF9685 /* Main.storyboard */; };
-		6F8DAC6919E9B92100EF9685 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F8DAC6819E9B92100EF9685 /* Images.xcassets */; };
 		6F8DAC6C19E9B92100EF9685 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8DAC6A19E9B92100EF9685 /* LaunchScreen.xib */; };
 		6F8DAC7819E9B92100EF9685 /* FFFMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8DAC7719E9B92100EF9685 /* FFFMTests.m */; };
 		6F8DAC8219E9BD4C00EF9685 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8DAC8119E9BD4C00EF9685 /* MapKit.framework */; };
@@ -33,6 +33,8 @@
 /* Begin PBXFileReference section */
 		1090FD0B8B6667B94129771D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6374844EB353A3A6AF1A5446 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6F36BEC519EFC26300C30330 /* LocationOnMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationOnMap.h; sourceTree = "<group>"; };
+		6F36BEC619EFC26300C30330 /* LocationOnMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationOnMap.m; sourceTree = "<group>"; };
 		6F8DAC5819E9B92100EF9685 /* FFFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F8DAC5C19E9B92100EF9685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F8DAC5D19E9B92100EF9685 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,7 +43,6 @@
 		6F8DAC6219E9B92100EF9685 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6F8DAC6319E9B92100EF9685 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6F8DAC6619E9B92100EF9685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6F8DAC6819E9B92100EF9685 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6F8DAC6B19E9B92100EF9685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6F8DAC7119E9B92100EF9685 /* FFFMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFFMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F8DAC7619E9B92100EF9685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,8 +115,9 @@
 				6F8DAC8419E9CBE500EF9685 /* LocationManager.m */,
 				6F8DAC8619E9D74D00EF9685 /* Parse.h */,
 				6F8DAC8719E9D74D00EF9685 /* Parse.m */,
+				6F36BEC519EFC26300C30330 /* LocationOnMap.h */,
+				6F36BEC619EFC26300C30330 /* LocationOnMap.m */,
 				6F8DAC6519E9B92100EF9685 /* Main.storyboard */,
-				6F8DAC6819E9B92100EF9685 /* Images.xcassets */,
 				6F8DAC6A19E9B92100EF9685 /* LaunchScreen.xib */,
 				6F8DAC5B19E9B92100EF9685 /* Supporting Files */,
 			);
@@ -241,7 +243,6 @@
 			files = (
 				6F8DAC6719E9B92100EF9685 /* Main.storyboard in Resources */,
 				6F8DAC6C19E9B92100EF9685 /* LaunchScreen.xib in Resources */,
-				6F8DAC6919E9B92100EF9685 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +297,7 @@
 				6F8DAC6419E9B92100EF9685 /* ViewController.m in Sources */,
 				6F8DAC8819E9D74D00EF9685 /* Parse.m in Sources */,
 				6F8DAC6119E9B92100EF9685 /* AppDelegate.m in Sources */,
+				6F36BEC719EFC26300C30330 /* LocationOnMap.m in Sources */,
 				6F8DAC5E19E9B92100EF9685 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

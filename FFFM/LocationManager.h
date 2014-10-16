@@ -9,9 +9,10 @@
 #import "AFHTTPRequestOperationManager.h"
 
 typedef void(^LocationComplition)(id data, BOOL success);
+typedef void(^GeoComplition)(id data, BOOL success);
 
 @interface LocationManager : AFHTTPRequestOperationManager
 
 -(void)getPhotosIdsWithcomplition:(LocationComplition)complitionBlock;
-
+-(void)getGeoFromPhotoWithId:(NSString *)photoID andComplition:(GeoComplition)complitionBlock;
 @end

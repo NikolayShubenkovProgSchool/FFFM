@@ -7,16 +7,29 @@
 //
 
 #import "Parse.h"
+#import "LocationOnMap.h"
 
 @implementation Parse
 
--(NSMutableArray *)idsFromInfoes:(NSArray *)infoes{
+-(NSMutableArray *)idsFromInfoes:(NSDictionary *)infoes{
     NSMutableArray *array=[NSMutableArray new];
-    for(NSDictionary *info in infoes){
-        NSString *ID=[NSString stringWithFormat:@"%d",[info[@"id"]integerValue]];
+    NSMutableDictionary *PhotosFromParse=[[NSMutableDictionary alloc] init];
+    [PhotosFromParse addEntriesFromDictionary:[infoes objectForKey:@"photos"]];
+    NSMutableArray *PFP=[[NSMutableArray alloc]init];
+    PFP=[PhotosFromParse objectForKey:@"photo"];
+    for (int i=0; i<[PFP count]; i++) {
+        NSMutableDictionary *FLD=[[NSMutableDictionary alloc] init];
+        [FLD addEntriesFromDictionary:PFP[i]];
+        NSString *ID=[FLD valueForKey:@"id"];
         [array addObject:ID];
     }
     return array;
 }
 
+-(LocationOnMap *)geoFromId:(NSDictionary *)infoes{
+    
+    CLLocationCoordinate2D coordinate;
+    LocationOnMap *location=[[LocationOnMap alloc] initWithCoordinate:coordinate id:@""];
+    return location;
+}
 @end

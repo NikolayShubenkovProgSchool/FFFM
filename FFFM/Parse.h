@@ -10,6 +10,8 @@
 
 @interface Parse : AFHTTPRequestOperationManager
 
--(NSMutableArray *)idsFromInfoes:(NSArray *)infoes;
+-(NSMutableArray *)idsFromInfoes:(NSDictionary *)infoes;
+
+-(NSMutableDictionary *)geoFromId:(NSDictionary *)infoes;
 
 @end
