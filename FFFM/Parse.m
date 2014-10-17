@@ -13,7 +13,7 @@
 -(NSMutableArray *)idsFromInfoes:(NSArray *)infoes{
     NSMutableArray *array=[NSMutableArray new];
     for(NSDictionary *info in infoes){
-        NSString *ID=[NSString stringWithFormat:@"%d",[info[@"id"]integerValue]];
+        NSString *ID=[NSString stringWithFormat:@"%@",[info[@"id"]string]];
         [array addObject:ID];
     }
     return array;
