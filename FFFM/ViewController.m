@@ -18,7 +18,7 @@
 
 @implementation ViewController
 
-@synthesize IDs;
+@synthesize IDs, Locations;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,9 +52,10 @@
         dispatch_async(mainQueue, ^{
             IDs=parsedIds;
             for (int i=0; i<[IDs count]/10; i++) {
-                NSLog(@"%@",IDs[i]);
+                //NSLog(@"id number %d=%@",i,IDs[i]);
                 [[LocationManager new] getGeoFromPhotoWithId:IDs[i] andComplition:^(id data, BOOL Success){
                     if (Success) {
+                        NSLog(@"%@", data);
                         [self p_parseGeo:data];
                     }else{
                         [MBProgressHUD hideAllHUDsForView:self.view
@@ -71,9 +72,11 @@
     dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     dispatch_async(backgroundQueue, ^{
         //call method from parse.h
+        LocationOnMap *loc=[[Parse new] geoFromId:dictionary];
+        //[Locations addObject:loc];
         dispatch_queue_t mainQueue = dispatch_get_main_queue();
         dispatch_async(mainQueue, ^{
-            //call method to drop pins to map
+            
         });
     });
 }

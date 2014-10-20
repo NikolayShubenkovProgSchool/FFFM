@@ -12,6 +12,8 @@
 @interface ViewController : UIViewController
 
 @property (strong,nonatomic) NSMutableArray *IDs;
+@property (strong,nonatomic) NSMutableArray *Locations;
+
 @property (weak, nonatomic) IBOutlet MKMapView *Map;
 
 - (IBAction)ShowLocations:(id)sender;

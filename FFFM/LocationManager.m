@@ -44,11 +44,14 @@
     NSString *ID=photoID;
     NSDictionary *parameters = @{@"method" :@"flickr.photos.geo.getLocation",
                                 @"api_key":@"8eb901e0e7bdd1a637abac52c87d1a87",
-                                @"photo_id":ID
+                                @"photo_id":ID,
+                                @"format":@"json",
+                                @"nojsoncallback":@"1"
                                 };
     [self GET:@""
     parameters:parameters
         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            //NSLog(@"OK\n");
             copiedComplitionBlock(responseObject, YES);
           }
         failure:^(AFHTTPRequestOperation *operation, NSError *error) {

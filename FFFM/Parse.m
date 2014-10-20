@@ -29,7 +29,9 @@
 -(LocationOnMap *)geoFromId:(NSDictionary *)infoes{
     
     CLLocationCoordinate2D coordinate;
-    LocationOnMap *location=[[LocationOnMap alloc] initWithCoordinate:coordinate id:@""];
+    coordinate.latitude=[[infoes objectForKey:@"latitude"] doubleValue];
+    coordinate.longitude=[[infoes objectForKey:@"longitude"] doubleValue];
+    LocationOnMap *location=[[LocationOnMap alloc] initWithCoordinate:coordinate id:[infoes objectForKey:@"id"]];
     return location;
 }
 @end
