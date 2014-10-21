@@ -65,7 +65,7 @@
                 }];
             }
             //[Locations addObject:Location];
-            NSLog(@"locations=%@", Locations);
+            //NSLog(@"locations=%@", Locations);
         });
     });
 }
@@ -76,8 +76,9 @@
         //call method from parse.h
         LocationOnMap *Location=[LocationOnMap new];
         Location=[[Parse new] geoFromId:dictionary];//here must be not array but something else
-        NSLog(@"location=%@", Location);
+        //NSLog(@"location=%@", Location);
         [Locations addObject:Location];
+        NSLog(@"%@",Locations);
         //[Locations addObject:loc];
 //        dispatch_queue_t mainQueue = dispatch_get_main_queue();
 //        dispatch_async(mainQueue, ^{
