@@ -75,6 +75,7 @@
     dispatch_async(backgroundQueue, ^{
         //call method from parse.h
         LocationOnMap *Location=[LocationOnMap new];
+        
         Location=[[Parse new] geoFromId:dictionary];//here must be not array but something else
         //NSLog(@"location=%@", Location);
         [Locations addObject:Location];
