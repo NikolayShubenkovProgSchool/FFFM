@@ -17,5 +17,5 @@
 
 -(id)initWithCoordinate:(CLLocationCoordinate2D) coordinate id:(NSString *)ID;
 
--(NSString *)description;
+//-(NSString *)description;
 @end

@@ -18,7 +18,7 @@
 
 @implementation ViewController
 
-@synthesize IDs, Locations;
+@synthesize IDs, Locations, Location;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,11 +51,11 @@
         dispatch_queue_t mainQueue = dispatch_get_main_queue();
         dispatch_async(mainQueue, ^{
             IDs=parsedIds;
-            for (int i=0; i<[IDs count]/10; i++) {
+            for (int i=0; i<2/*[IDs count]/10*/; i++) {
                 //NSLog(@"id number %d=%@",i,IDs[i]);
                 [[LocationManager new] getGeoFromPhotoWithId:IDs[i] andComplition:^(id data, BOOL Success){
                     if (Success) {
-                        NSLog(@"%@", data);
+                        //NSLog(@"%@", data);
                         [self p_parseGeo:data];
                     }else{
                         [MBProgressHUD hideAllHUDsForView:self.view
@@ -64,6 +64,8 @@
                     }
                 }];
             }
+            //[Locations addObject:Location];
+            NSLog(@"locations=%@", Locations);
         });
     });
 }
@@ -72,12 +74,14 @@
     dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     dispatch_async(backgroundQueue, ^{
         //call method from parse.h
-        LocationOnMap *loc=[[Parse new] geoFromId:dictionary];
+        Location=[[Parse new] geoFromId:dictionary];
+        NSLog(@"location=%@", Location);
+        [Locations addObject:Location];
         //[Locations addObject:loc];
-        dispatch_queue_t mainQueue = dispatch_get_main_queue();
-        dispatch_async(mainQueue, ^{
-            
-        });
+//        dispatch_queue_t mainQueue = dispatch_get_main_queue();
+//        dispatch_async(mainQueue, ^{
+//            
+//        });
     });
 }
 @end

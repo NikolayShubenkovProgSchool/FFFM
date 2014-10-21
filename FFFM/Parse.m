@@ -27,11 +27,16 @@
 }
 
 -(LocationOnMap *)geoFromId:(NSDictionary *)infoes{
-    
+    NSDictionary *gFP=[infoes objectForKey:@"photo"];
+    NSDictionary *lFP=[gFP objectForKey:@"location"];
     CLLocationCoordinate2D coordinate;
-    coordinate.latitude=[[infoes objectForKey:@"latitude"] doubleValue];
-    coordinate.longitude=[[infoes objectForKey:@"longitude"] doubleValue];
-    LocationOnMap *location=[[LocationOnMap alloc] initWithCoordinate:coordinate id:[infoes objectForKey:@"id"]];
+    coordinate.latitude=[[lFP objectForKey:@"latitude"] doubleValue];
+    //NSLog(@"lat = %@", [lFP objectForKey:@"latitude"]);
+    //NSLog(@"lat = %f", coordinate.latitude);
+    coordinate.longitude=[[lFP objectForKey:@"longitude"] doubleValue];
+    //NSLog(@"long= %@", [lFP objectForKey:@"longitude"]);
+    //NSLog(@"long= %f", coordinate.longitude);
+    LocationOnMap *location=[[LocationOnMap alloc] initWithCoordinate:coordinate id:[gFP objectForKey:@"id"]];
     return location;
 }
 @end

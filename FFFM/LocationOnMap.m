@@ -9,6 +9,7 @@
 #import "LocationOnMap.h"
 
 @interface LocationOnMap()
+
 @property (nonatomic) CLLocationCoordinate2D internalCoordinate;
 
 @end
@@ -34,11 +35,11 @@
     return self;
 }
 
--(NSString *)description{
-    NSDictionary *description=@{@"cooddinate" : @{@"long":@(self.coordinate.longitude),
-                                                  @"lat" :@(self.coordinate.latitude)},
-                                @"ID":self.ID
-                                };
-    return [NSString stringWithFormat:@"%@\n%@",[super description],description];
-}
+//-(NSString *)description{
+//    NSDictionary *description=@{@"cooddinate" : @{@"long":@(self.coordinate.longitude),
+//                                                  @"lat" :@(self.coordinate.latitude)},
+//                                @"ID":self.ID
+//                                };
+//    return [NSString stringWithFormat:@"%@\n%@",[super description],description];
+//}
 @end
