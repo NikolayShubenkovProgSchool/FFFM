@@ -18,7 +18,7 @@
 
 @implementation ViewController
 
-@synthesize IDs, Locations, Location;
+@synthesize IDs, Locations;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -74,7 +74,8 @@
     dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     dispatch_async(backgroundQueue, ^{
         //call method from parse.h
-        Location=[[Parse new] geoFromId:dictionary];
+        LocationOnMap *Location=[LocationOnMap new];
+        Location=[[Parse new] geoFromId:dictionary];//here must be not array but something else
         NSLog(@"location=%@", Location);
         [Locations addObject:Location];
         //[Locations addObject:loc];

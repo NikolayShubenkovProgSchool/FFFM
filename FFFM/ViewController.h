@@ -13,7 +13,7 @@
 
 @property (strong,nonatomic) NSMutableArray *IDs;
 @property (strong,nonatomic) NSMutableArray *Locations;
-@property (strong,nonatomic) NSMutableArray *Location;
+//@property (strong,nonatomic) NSMutableArray *Location;
 
 @property (weak, nonatomic) IBOutlet MKMapView *Map;
 
