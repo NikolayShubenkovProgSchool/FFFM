@@ -13,6 +13,7 @@
 
 -(NSMutableArray *)idsFromInfoes:(NSDictionary *)infoes{
     NSMutableArray *array=[NSMutableArray new];
+<<<<<<< HEAD
     NSMutableDictionary *PhotosFromParse=[[NSMutableDictionary alloc] init];
     [PhotosFromParse addEntriesFromDictionary:[infoes objectForKey:@"photos"]];
     NSMutableArray *PFP=[[NSMutableArray alloc]init];
@@ -21,6 +22,10 @@
         NSMutableDictionary *FLD=[[NSMutableDictionary alloc] init];
         [FLD addEntriesFromDictionary:PFP[i]];
         NSString *ID=[FLD valueForKey:@"id"];
+=======
+    for(NSDictionary *info in infoes){
+        NSString *ID=[NSString stringWithFormat:@"%@",[info[@"id"]string]];
+>>>>>>> FETCH_HEAD
         [array addObject:ID];
     }
     return array;

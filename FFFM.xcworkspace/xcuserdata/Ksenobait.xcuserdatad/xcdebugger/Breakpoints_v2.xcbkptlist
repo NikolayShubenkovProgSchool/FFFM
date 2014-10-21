@@ -20,6 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFFM/Parse.m"
+<<<<<<< HEAD
             timestampString = "435147596.161717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -53,6 +54,9 @@
             continueAfterRunningActions = "No"
             filePath = "FFFM/Parse.m"
             timestampString = "435147647.978383"
+=======
+            timestampString = "434757105.208218"
+>>>>>>> FETCH_HEAD
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -61,6 +65,7 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+<<<<<<< HEAD
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
@@ -347,5 +352,7 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+=======
+>>>>>>> FETCH_HEAD
    </Breakpoints>
 </Bucket>
