@@ -48,6 +48,9 @@
     dispatch_queue_t backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     dispatch_async(backgroundQueue, ^{
         NSArray *parsedIds=[[Parse new] idsFromInfoes:dictionary];
+#warning зачем вы тут в основной поток переходите?
+#warning чтобы потом где-то внутри parse geo перейти в фоновый?
+        //работайте тогда сразу отсюда в фоне.
         dispatch_queue_t mainQueue = dispatch_get_main_queue();
         dispatch_async(mainQueue, ^{
             IDs=parsedIds;

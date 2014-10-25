@@ -13,25 +13,16 @@
 
 -(NSMutableArray *)idsFromInfoes:(NSDictionary *)infoes{
     NSMutableArray *array=[NSMutableArray new];
-<<<<<<< HEAD
-    NSMutableDictionary *PhotosFromParse=[[NSMutableDictionary alloc] init];
-    [PhotosFromParse addEntriesFromDictionary:[infoes objectForKey:@"photos"]];
-    NSMutableArray *PFP=[[NSMutableArray alloc]init];
-    PFP=[PhotosFromParse objectForKey:@"photo"];
-    for (int i=0; i<[PFP count]; i++) {
-        NSMutableDictionary *FLD=[[NSMutableDictionary alloc] init];
-        [FLD addEntriesFromDictionary:PFP[i]];
-        NSString *ID=[FLD valueForKey:@"id"];
-=======
-    for(NSDictionary *info in infoes){
-        NSString *ID=[NSString stringWithFormat:@"%@",[info[@"id"]string]];
->>>>>>> FETCH_HEAD
+    for(NSDictionary *info in infoes[@"photos"][@"photo"]){
+        NSString *ID=info[@"id"];
         [array addObject:ID];
     }
     return array;
 }
 
 -(LocationOnMap *)geoFromId:(NSDictionary *)infoes{
+#warning называйте переменные осмысленно и не сокращайте никогда. 
+#warning это признак плохого тона. По названию переменное должно быть понятно ее назначение
     NSDictionary *gFP=[infoes objectForKey:@"photo"];
     NSDictionary *lFP=[gFP objectForKey:@"location"];
     CLLocationCoordinate2D coordinate;
@@ -41,6 +32,7 @@
     coordinate.longitude=[[lFP objectForKey:@"longitude"] doubleValue];
     //NSLog(@"long= %@", [lFP objectForKey:@"longitude"]);
     //NSLog(@"long= %f", coordinate.longitude);
+#warning добавьте парсинг заголовка, для аннотации title
     LocationOnMap *location=[[LocationOnMap alloc] initWithCoordinate:coordinate id:[gFP objectForKey:@"id"]];
     return location;
 }

@@ -7,11 +7,11 @@
 //
 
 #import "AFHTTPRequestOperationManager.h"
-
+@class LocationOnMap;
 @interface Parse : AFHTTPRequestOperationManager
 
 -(NSMutableArray *)idsFromInfoes:(NSDictionary *)infoes;
 
--(NSMutableDictionary *)geoFromId:(NSDictionary *)infoes;
+-(LocationOnMap *)geoFromId:(NSDictionary *)infoes;
 
 @end
